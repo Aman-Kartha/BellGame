@@ -7,9 +7,12 @@ public partial class spawner : MonoBehaviour
     [SerializeField]
     private movingCube cubePrefab;
     [SerializeField]
+    private float numCubes;
+    [SerializeField]
     GameObject starter;
     [SerializeField]
     MoveDirection moveDirection;
+    private float cubeCount = 0;
     
     public void SpawnCube()
     {
@@ -33,12 +36,18 @@ public partial class spawner : MonoBehaviour
         }
 
         cube.moveDirection = moveDirection;
+        cubeCount++;
     }
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position, cubePrefab.transform.localScale);
 
+    }
+
+    public bool isDone()
+    {
+        return cubeCount >= numCubes;
     }
     void Update()
     {

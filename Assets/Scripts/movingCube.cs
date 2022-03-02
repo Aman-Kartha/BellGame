@@ -9,10 +9,12 @@ public class movingCube : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField]
     float moveSpeed = 1f;
-   
+    private bool isShaking = false;
+
     public static movingCube currentCube { get; private set; }
     public static movingCube LastCube { get; private set; }
     public spawner.MoveDirection moveDirection { get; internal set; }
+    
 
     private void OnEnable()
     {
@@ -27,11 +29,10 @@ public class movingCube : MonoBehaviour
             moveSpeed = LastCube.moveSpeed + GameObject.Find("GameManager").GetComponent<GameManager>().speed;
         }
         currentCube = this;
-        GetComponent<Renderer>().material.color = new Color32(192, 178, 128,100);
-        Debug.Log(LastCube.transform.localScale.z);
+        //GetComponent<Renderer>().material.color = new Color32(192, 178, 128,100);
         // LastCube.transform.localScale = new Vector3(LastCube.transform.localScale.x, transform.localScale.y, LastCube.transform.localScale.z - 0.5);
         transform.localScale = new Vector3 (LastCube.transform.localScale.x, transform.localScale.y, LastCube.transform.localScale.z - 1f);
-       
+
         //transform.localScale = Vector3.one * 0.5f;
     }
 
@@ -39,7 +40,7 @@ public class movingCube : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     internal void Stop()
@@ -54,8 +55,15 @@ public class movingCube : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
+        print(hangover);
+
         float direction = hangover > 0 ? 1f : -1f;
 
+        if(Mathf.Abs(hangover) >= 1f)
+        {
+            isShaking = true;
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<HealthSystem>().removeHealth(Mathf.Abs(hangover));
+        }
         SplitCubeOnZ(hangover,direction);
 
         //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, transform.localScale.z - 2);
@@ -66,7 +74,7 @@ public class movingCube : MonoBehaviour
     private void SplitCubeOnZ(float hangover,float direction)
     {
         float newZSize;
-        Debug.Log(LastCube.transform.localScale.z);
+
         if (hangover < 0)
         {
             newZSize = LastCube.transform.localScale.z -1f;
@@ -105,7 +113,6 @@ public class movingCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (moveDirection == spawner.MoveDirection.X2)
         {
             if (Vector3.Distance(this.transform.position, GameObject.Find("SpawnerRight").transform.position) > 15)
@@ -123,5 +130,9 @@ public class movingCube : MonoBehaviour
             }
             transform.position += transform.forward * Time.deltaTime * moveSpeed;
         }
+    }
+    public bool getShaking()
+    {
+        return isShaking;
     }
 }
