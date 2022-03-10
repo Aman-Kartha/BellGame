@@ -15,13 +15,15 @@ public class temperature : MonoBehaviour
 
     [SerializeField] GameObject lava;
 
+    [SerializeField] Light fire;
+
     [SerializeField] Image health;
 
     [SerializeField] Image Temp;
 
     Renderer lavaMat;
 
-    float temperaturePosition;
+    public float temperaturePosition;
     [SerializeField] float temperatuerSize = 0.1f;
     [SerializeField] float TemperaturePower = 5f;
     float hookProgress;
@@ -42,6 +44,8 @@ public class temperature : MonoBehaviour
     [SerializeField] float smoothMotion = 1f;
     void Start()
     {
+        targetPosition = 1f;
+        progress = 0f;
         /*
         Bounds b = render.GetComponent<UnityEngine.UI.Image>(;
         float ySize = b.size.y;
@@ -58,7 +62,7 @@ public class temperature : MonoBehaviour
         //Debug.Log(progress);
         progressCheck();
 
-
+        fire.intensity = temperaturePosition * 20f;
 
         if (Input.GetKeyDown(KeyCode.Q) )
         {
