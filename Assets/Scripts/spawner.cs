@@ -38,12 +38,6 @@ public partial class spawner : MonoBehaviour
         cube.moveDirection = moveDirection;
         cubeCount++;
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, cubePrefab.transform.localScale);
-
-    }
 
     public bool isDone()
     {
