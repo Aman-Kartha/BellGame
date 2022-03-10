@@ -55,11 +55,17 @@ public class temperature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(progress);
+        //Debug.Log(progress);
         progressCheck();
-        
 
 
+
+        if (Input.GetKeyDown(KeyCode.Q) )
+        {
+
+            heat();
+
+        }
 
         targetTimer -= Time.deltaTime;
         if(targetTimer < 0f) {
@@ -70,7 +76,7 @@ public class temperature : MonoBehaviour
         targetPosition = Mathf.SmoothDamp(targetPosition, targetDestination, ref speed, smoothMotion);
         target.position = Vector3.Lerp(bot.position, top.position, targetPosition);
 
-
+        hookPullVelocity -= TemperatureGravityPower * Time.deltaTime;
         tempe();
     }
 
@@ -97,7 +103,8 @@ public class temperature : MonoBehaviour
     }
     public void heat()
     {
-        hookPullVelocity += 0.5f*TemperaturePower * Time.deltaTime;
+        hookPullVelocity += 0.1f*TemperaturePower * Time.deltaTime;
+        Debug.Log("pressed");
     }
     public void highHeat()
     {
@@ -106,12 +113,12 @@ public class temperature : MonoBehaviour
 
     void progressCheck()
     {
-        float min = temperaturePosition - temperatuerSize / 2;
-        float max = temperaturePosition + temperatuerSize / 2;
+        float min = temperaturePosition - temperatuerSize / 2  - 0.05f;
+        float max = temperaturePosition + temperatuerSize / 2  + 0.05f;
 
         if (min < targetPosition && targetPosition < max)
         {
-            Debug.Log(temperaturePosition);
+            //Debug.Log(temperaturePosition);
             progress += TemperaturePower * Time.deltaTime;
 
         }
@@ -121,6 +128,6 @@ public class temperature : MonoBehaviour
         }
         progress = Mathf.Clamp(progress, 0f, 1f);
 
-        health.fillAmount = Mathf.Lerp(health.fillAmount, progress, 3f * Time.deltaTime) ;
+        health.fillAmount = Mathf.Lerp(health.fillAmount, progress, 0.5f*Time.deltaTime) ;
     }
 }
