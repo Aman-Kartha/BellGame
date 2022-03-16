@@ -12,6 +12,7 @@ public class temperature : MonoBehaviour
     [SerializeField] Sprite three;
     [SerializeField] Sprite four;
     [SerializeField] GameObject TARGETIMAGE;
+    [SerializeField] float progressMultiplier;
 
     [SerializeField] GameObject lava;
 
@@ -81,12 +82,14 @@ public class temperature : MonoBehaviour
         target.position = Vector3.Lerp(bot.position, top.position, targetPosition);
 
         hookPullVelocity -= TemperatureGravityPower * Time.deltaTime;
+        hookPullVelocity = Mathf.Clamp(hookPullVelocity, -10, 10);
         tempe();
     }
 
 
     void tempe()
     {
+        
         temperaturePosition += hookPullVelocity;
         temperaturePosition = Mathf.Clamp(temperaturePosition, temperatuerSize/2, 1 - temperatuerSize/2 );
         Temp.fillAmount = temperaturePosition;
@@ -123,7 +126,7 @@ public class temperature : MonoBehaviour
         if (min < targetPosition && targetPosition < max)
         {
             //Debug.Log(temperaturePosition);
-            progress += TemperaturePower * Time.deltaTime;
+            progress += progressMultiplier * Time.deltaTime;
 
         }
         else
@@ -132,6 +135,6 @@ public class temperature : MonoBehaviour
         }
         progress = Mathf.Clamp(progress, 0f, 1f);
 
-        health.fillAmount = Mathf.Lerp(health.fillAmount, progress, 0.5f*Time.deltaTime) ;
+        health.fillAmount = Mathf.Lerp(health.fillAmount, progress, 5f*Time.deltaTime) ;
     }
 }

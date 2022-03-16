@@ -730,7 +730,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -6472,6 +6472,7 @@ MonoBehaviour:
   three: {fileID: 21300000, guid: 8b382e62f31599f4aa3e857c4f6848db, type: 3}
   four: {fileID: 21300000, guid: 60188f6073229df4e988e9a9f9ef9937, type: 3}
   TARGETIMAGE: {fileID: 1059107372}
+  progressMultiplier: 0.1
   lava: {fileID: 162850953}
   fire: {fileID: 1618689816}
   health: {fileID: 265121437}
@@ -6480,7 +6481,7 @@ MonoBehaviour:
   temperatuerSize: 0.2
   TemperaturePower: 2
   TemperatureGravityPower: 0.0005
-  DegredationPower: 5
+  DegredationPower: 0
   target: {fileID: 1059107373}
   render: {fileID: 1228110824}
   timerMultiplicator: 3
