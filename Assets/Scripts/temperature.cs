@@ -63,7 +63,7 @@ public class temperature : MonoBehaviour
         //Debug.Log(progress);
         progressCheck();
 
-        fire.intensity = temperaturePosition * 20f;
+        fire.intensity = (temperaturePosition + 0.2f) * 50f;
 
         if (Input.GetKeyDown(KeyCode.Q) )
         {
