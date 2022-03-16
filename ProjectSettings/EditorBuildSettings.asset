@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing.unity
     guid: ca78be1e224cbe34bb94d12bba35fa37
+  - enabled: 1
+    path: Assets/Scenes/LossScreen.unity
+    guid: 24786c4cf5f75584eac88acb776de30c
   m_configObjects: {}

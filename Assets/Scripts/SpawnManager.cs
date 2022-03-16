@@ -41,10 +41,11 @@ public class SpawnManager : MonoBehaviour
             if (currentCube.GetComponent<CubeManager>().isDone())
             {
                 this.GetComponent<HealthSystem>().removeHealth(Mathf.Abs(currentCube.transform.localPosition.x - 0));
+                currentCube.transform.localPosition = correctPlacement;
                 if (!(count > cubes.Count))
                 {
                     currentCube = cubes[count - 1];
-                    correctPlacement = currentCube.transform.localPosition;
+                    correctPlacement.y = currentCube.transform.localPosition.y;
                     if (count % 2 == 0)
                     {
                         currentCube.transform.position = new Vector3(currentCube.transform.position.x, currentCube.transform.position.y, rightSpawner.transform.position.z - 2);

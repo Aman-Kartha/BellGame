@@ -50,7 +50,7 @@ public class HealthSystem : MonoBehaviour
             healthBar.fillAmount = health / originalHealth;
             if (health <= 0)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene(3);
             }
         }
     }
