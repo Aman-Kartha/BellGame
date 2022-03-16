@@ -7733,6 +7733,7 @@ MonoBehaviour:
   - {fileID: 1041538169}
   - {fileID: 1041538167}
   leftSpawner: {fileID: 720049728}
+  brokenMat: {fileID: 2100000, guid: e13f3fe68170adc41b1262eda17875fc, type: 2}
   rightSpawner: {fileID: 261746949}
 --- !u!1 &1968520219
 GameObject:

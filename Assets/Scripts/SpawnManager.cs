@@ -10,6 +10,8 @@ public class SpawnManager : MonoBehaviour
     [SerializeField]
     private GameObject leftSpawner;
     [SerializeField]
+    private Material brokenMat;
+    [SerializeField]
     private GameObject rightSpawner;
 
     private int count = 1;
@@ -41,6 +43,10 @@ public class SpawnManager : MonoBehaviour
             if (currentCube.GetComponent<CubeManager>().isDone())
             {
                 this.GetComponent<HealthSystem>().removeHealth(Mathf.Abs(currentCube.transform.localPosition.x - 0));
+                if(Mathf.Abs(currentCube.transform.localPosition.x - 0) > 0.05)
+                {
+                    currentCube.GetComponent<MeshRenderer>().material = brokenMat;
+                }
                 currentCube.transform.localPosition = correctPlacement;
                 if (!(count > cubes.Count))
                 {
