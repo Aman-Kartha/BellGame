@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/stacking.unity
     guid: 974f8a559d7a30644ba4dba2e4bac4de
   - enabled: 1
+    path: Assets/Scenes/main.unity
+    guid: f9cb5a07287c6e24481adb2181b1786f
+  - enabled: 0
     path: Assets/Scenes/Testing.unity
     guid: ca78be1e224cbe34bb94d12bba35fa37
   - enabled: 1
     path: Assets/Scenes/LossScreen.unity
     guid: 24786c4cf5f75584eac88acb776de30c
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: b9a291c51b6d6024f9626540d452a031
   m_configObjects: {}

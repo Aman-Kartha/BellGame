@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class temperature : MonoBehaviour
 {
@@ -60,11 +61,15 @@ public class temperature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (progress >= 1f)
+        {
+            SceneManager.LoadScene(4);
+        }
         //Debug.Log(progress);
         progressCheck();
 
         fire.intensity = (temperaturePosition + 0.2f) * 50f;
-
+        
         if (Input.GetKeyDown(KeyCode.Q) )
         {
 
@@ -94,8 +99,23 @@ public class temperature : MonoBehaviour
         temperaturePosition = Mathf.Clamp(temperaturePosition, temperatuerSize/2, 1 - temperatuerSize/2 );
         Temp.fillAmount = temperaturePosition;
 
-        Temp.color = Color.Lerp(Color.blue,Color.red, Temp.fillAmount);
+        //Temp.color = Color.Lerp(Color.blue,Color.red, Temp.fillAmount);
 
+        if (Temp.fillAmount < 0.3f)
+        {
+            Temp.color = Color.blue;
+            lavaMat.material.SetFloat("Vector1_16fcf61d839a4600871c256eb8387946", (1f));
+        }
+        else if (Temp.fillAmount >= 0.3f && Temp.fillAmount < 0.65f)
+        {
+            Temp.color = Color.green;
+            lavaMat.material.SetFloat("Vector1_16fcf61d839a4600871c256eb8387946", (5f));
+        }
+        else if (Temp.fillAmount >= 0.65f )
+        {
+            Temp.color = Color.red;
+            lavaMat.material.SetFloat("Vector1_16fcf61d839a4600871c256eb8387946", (10f));
+        }
         lavaMat.material.SetColor("_BaseColor",Temp.color);
         
         
