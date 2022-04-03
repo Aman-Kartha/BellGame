@@ -309,7 +309,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
@@ -446,15 +446,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 321048536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12}
-  m_LocalScale: {x: 1.0562848, y: 0.77074903, z: 0.63693}
+  m_LocalPosition: {x: 0, y: 0, z: -23}
+  m_LocalScale: {x: 1.9485284, y: 1.4218006, z: 1.1749448}
   m_Children: []
   m_Father: {fileID: 160049529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332.84, y: 210}
+  m_AnchoredPosition: {x: -568, y: 416}
   m_SizeDelta: {x: 340.2, y: 55.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &321048538
@@ -2574,15 +2574,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723886505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 12}
-  m_LocalScale: {x: 1.0562848, y: 0.77074903, z: 0.63693}
+  m_LocalPosition: {x: 0, y: 0, z: -23}
+  m_LocalScale: {x: 1.9485284, y: 1.4218006, z: 1.1749448}
   m_Children: []
   m_Father: {fileID: 160049529}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -332.84, y: 209.99998}
+  m_AnchoredPosition: {x: -568, y: 415.99994}
   m_SizeDelta: {x: 340.2, y: 55.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723886507
@@ -2892,6 +2892,7 @@ GameObject:
   - component: {fileID: 1928128961}
   - component: {fileID: 1928128960}
   - component: {fileID: 1928128959}
+  - component: {fileID: 1928128962}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -7735,6 +7736,19 @@ MonoBehaviour:
   leftSpawner: {fileID: 720049728}
   brokenMat: {fileID: 2100000, guid: e13f3fe68170adc41b1262eda17875fc, type: 2}
   rightSpawner: {fileID: 261746949}
+--- !u!114 &1928128962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928128955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab7920f6f11663e449d64bc4c97bd629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneNum: 0
 --- !u!1 &1968520219
 GameObject:
   m_ObjectHideFlags: 0

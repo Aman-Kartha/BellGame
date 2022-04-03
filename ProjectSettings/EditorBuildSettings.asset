@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: b9a291c51b6d6024f9626540d452a031
+  - enabled: 1
+    path: Assets/Scenes/stacking_tutorial.unity
+    guid: aed8b71eeb99650409c81d415c9d57c3
+  - enabled: 1
+    path: Assets/Scenes/Temp_tutorial.unity
+    guid: a9e248f1bff2d4e419760d0ec5b2462c
   m_configObjects: {}

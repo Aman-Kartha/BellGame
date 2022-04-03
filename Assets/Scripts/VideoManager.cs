@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class VideoManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    [SerializeField]
+    int loadScene,unloadScene;
     void Start()
     {
         
@@ -25,6 +27,6 @@ public class VideoManager : MonoBehaviour
     }
     public void nextScene()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(this.GetComponent<combine>().loadlevelAsync(loadScene, unloadScene));
     }
 }

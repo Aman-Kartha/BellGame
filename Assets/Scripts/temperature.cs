@@ -23,6 +23,14 @@ public class temperature : MonoBehaviour
 
     [SerializeField] Image Temp;
 
+    [SerializeField] Sprite HotTherm;
+    [SerializeField] Sprite coldTherm;
+    [SerializeField] Sprite BaseTherm;
+
+    [SerializeField] Image Thermostat;
+
+   
+
     Renderer lavaMat;
 
     public float temperaturePosition;
@@ -63,7 +71,7 @@ public class temperature : MonoBehaviour
     {
         if (progress >= 1f)
         {
-            SceneManager.LoadScene(4);
+            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(4, 2));
         }
         //Debug.Log(progress);
         progressCheck();
@@ -105,16 +113,20 @@ public class temperature : MonoBehaviour
         {
             Temp.color = Color.blue;
             lavaMat.material.SetFloat("Vector1_16fcf61d839a4600871c256eb8387946", (1f));
+            Thermostat.sprite = coldTherm;
+
         }
         else if (Temp.fillAmount >= 0.3f && Temp.fillAmount < 0.65f)
         {
             Temp.color = Color.green;
             lavaMat.material.SetFloat("Vector1_16fcf61d839a4600871c256eb8387946", (5f));
+            Thermostat.sprite = BaseTherm;
         }
         else if (Temp.fillAmount >= 0.65f )
         {
             Temp.color = Color.red;
             lavaMat.material.SetFloat("Vector1_16fcf61d839a4600871c256eb8387946", (10f));
+           Thermostat.sprite = HotTherm;
         }
         lavaMat.material.SetColor("_BaseColor",Temp.color);
         

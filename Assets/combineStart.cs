@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class combineStart : MonoBehaviour
+{
+    // Start is called before the first frame update
+    void Start()
+    {
+        StartCoroutine(this.GetComponent<combine>().loadlevelAsync(0));
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}

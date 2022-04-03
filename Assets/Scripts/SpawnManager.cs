@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour
 
     private int count = 1;
     private bool gameDone = false;
+    private bool unloaded = true;
     private GameObject currentCube;
     private Vector3 correctPlacement;
 
@@ -34,9 +35,10 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameDone)
+        if (gameDone && unloaded)
         {
-            StartCoroutine(nextScene());
+            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(6,1));
+            unloaded = false;
         }
         else
         {
@@ -78,6 +80,6 @@ public class SpawnManager : MonoBehaviour
     {
         this.gameObject.GetComponent<ParticleSystem>().Play();
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(6);
     }
 }
