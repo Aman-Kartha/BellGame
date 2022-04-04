@@ -258,6 +258,81 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 08f9c0ad0bb07944facf66b221bd8e8b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a387094aff59484488cd2354b3bbdadb, type: 3}
+--- !u!1 &88399830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88399831}
+  - component: {fileID: 88399833}
+  - component: {fileID: 88399832}
+  m_Layer: 5
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &88399831
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88399830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalScale: {x: 6.0676227, y: 2.1844256, z: 0.8548857}
+  m_Children: []
+  m_Father: {fileID: 160049529}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -713, y: 388}
+  m_SizeDelta: {x: 98.1, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &88399832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88399830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bdc005868821a704e9bab7c24c5dd435, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &88399833
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88399830}
+  m_CullTransparentMesh: 1
 --- !u!1 &160049525
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +425,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1723886506}
+  - {fileID: 88399831}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 5.305, y: -99.907, z: 16.351}
@@ -2498,15 +2574,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723886505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -23}
-  m_LocalScale: {x: 1.9485284, y: 2.9671557, z: 1.1749448}
+  m_LocalPosition: {x: 0, y: 0, z: -14}
+  m_LocalScale: {x: 1.4177421, y: 2.1588917, z: 0.8548855}
   m_Children: []
   m_Father: {fileID: 160049529}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -568, y: 415.99994}
+  m_AnchoredPosition: {x: -668, y: 368.00006}
   m_SizeDelta: {x: 340.2, y: 55.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723886507
@@ -2529,7 +2605,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd8b7a69b405d55438de6e3fa48df006, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 823246d723d6f3045bd9886bb1b801ea, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2866,8 +2942,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0.75
   healthBar: {fileID: 1723886507}
-  halfHealth: {fileID: 21300000, guid: 53984005353afd64db88429d0008108c, type: 3}
-  lowHealth: {fileID: 21300000, guid: d3b59656e9dce5447ad2944ce1dbac03, type: 3}
+  healthBorder: {fileID: 88399832}
+  halfHealth: {fileID: 21300000, guid: 0431097081b9d4840bd40f91b8d3f7e6, type: 3}
+  lowHealth: {fileID: 21300000, guid: f69a5f119b296774bb83e33b74143e3e, type: 3}
+  lowBar: {fileID: 21300000, guid: 2a58053032175364a9d2c91b929c1578, type: 3}
+  halfBar: {fileID: 21300000, guid: 69bec8392bece954ca8e3f9dde73f769, type: 3}
   shakeLength: 0.2
 --- !u!199 &1928128959
 ParticleSystemRenderer:

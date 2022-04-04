@@ -11,9 +11,15 @@ public class HealthSystem : MonoBehaviour
     [SerializeField]
     private Image healthBar;
     [SerializeField]
+    private Image healthBorder;
+    [SerializeField]
     private Sprite halfHealth;
     [SerializeField]
     private Sprite lowHealth;
+    [SerializeField]
+    private Sprite lowBar;
+    [SerializeField]
+    private Sprite halfBar;
     [SerializeField]
     private float shakeLength;
     private float shakeDuration = 0f;
@@ -55,10 +61,12 @@ public class HealthSystem : MonoBehaviour
             if(health <= 0.5)
             {
                 healthBar.sprite = halfHealth;
+                healthBorder.sprite = halfBar;
             }
             else if(health <= 0.3)
             {
                 healthBar.sprite = lowHealth;
+                healthBorder.sprite = lowBar;
             }
             if (health <= 0)
             {
