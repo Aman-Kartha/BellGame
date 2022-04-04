@@ -11,6 +11,10 @@ public class HealthSystem : MonoBehaviour
     [SerializeField]
     private Image healthBar;
     [SerializeField]
+    private Sprite halfHealth;
+    [SerializeField]
+    private Sprite lowHealth;
+    [SerializeField]
     private float shakeLength;
     private float shakeDuration = 0f;
     private float shakeMagnitude = 0.7f;
@@ -48,6 +52,14 @@ public class HealthSystem : MonoBehaviour
             startShake();
             health -= loss;
             healthBar.fillAmount = health / originalHealth;
+            if(health <= 0.5)
+            {
+                healthBar.sprite = halfHealth;
+            }
+            else if(health <= 0.3)
+            {
+                healthBar.sprite = lowHealth;
+            }
             if (health <= 0)
             {
                 SceneManager.LoadScene(3);
