@@ -70,7 +70,7 @@ public class HealthSystem : MonoBehaviour
             }
             if (health <= 0)
             {
-                SceneManager.LoadScene(3);
+                StartCoroutine(this.GetComponent<combine>().loadlevelAsync(3,1));
             }
         }
     }

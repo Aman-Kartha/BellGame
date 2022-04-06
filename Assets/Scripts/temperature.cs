@@ -37,6 +37,7 @@ public class temperature : MonoBehaviour
     [SerializeField] float temperatuerSize = 0.1f;
     [SerializeField] float TemperaturePower = 5f;
     float hookProgress;
+    [SerializeField]
     float hookPullVelocity;
     [SerializeField] float TemperatureGravityPower = 0.005f;
     [SerializeField] float DegredationPower = 0.1f;
@@ -48,7 +49,7 @@ public class temperature : MonoBehaviour
     float targetPosition;
     float targetDestination;
     float targetTimer;
-
+    bool ensureOne = true;
     [SerializeField] float timerMultiplicator = 3f;
     float speed;
     [SerializeField] float smoothMotion = 1f;
@@ -69,9 +70,11 @@ public class temperature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (progress >= 1f)
+        if (progress == 1f && ensureOne)
         {
+            Debug.Log("one");
             StartCoroutine(this.GetComponent<combine>().loadlevelAsync(4, 2));
+            ensureOne = false;
         }
         //Debug.Log(progress);
         progressCheck();
@@ -95,7 +98,7 @@ public class temperature : MonoBehaviour
         target.position = Vector3.Lerp(bot.position, top.position, targetPosition);
 
         hookPullVelocity -= TemperatureGravityPower * Time.deltaTime;
-        hookPullVelocity = Mathf.Clamp(hookPullVelocity, -10, 10);
+        hookPullVelocity = Mathf.Clamp(hookPullVelocity, -0.001f, 0.0012f);
         tempe();
     }
 
