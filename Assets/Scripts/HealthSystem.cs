@@ -58,15 +58,16 @@ public class HealthSystem : MonoBehaviour
             startShake();
             health -= loss;
             healthBar.fillAmount = health / originalHealth;
-            if(health <= 0.5)
-            {
-                healthBar.sprite = halfHealth;
-                healthBorder.sprite = halfBar;
-            }
-            else if(health <= 0.3)
+            if(health <= 0.3)
             {
                 healthBar.sprite = lowHealth;
                 healthBorder.sprite = lowBar;
+                
+            }
+            else if(health <= 0.5)
+            {
+                healthBar.sprite = halfHealth;
+                healthBorder.sprite = halfBar;
             }
             if (health <= 0)
             {
