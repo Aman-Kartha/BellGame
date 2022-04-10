@@ -29,7 +29,7 @@ public class CubeManager : MonoBehaviour
             }
         }
         
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetKeyDown(KeyCode.W))
         {
             clicked = true;
         }
