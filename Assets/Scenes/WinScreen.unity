@@ -479,8 +479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3544f5eee7293c3428ee47190a481d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: 0
-  unloadScene: 4
+  loadScene: 1
+  unloadScene: 5
 --- !u!328 &908144019
 VideoPlayer:
   m_ObjectHideFlags: 0

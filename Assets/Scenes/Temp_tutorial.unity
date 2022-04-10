@@ -364,8 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   VideoPlayer: {fileID: 897440029}
-  SceneName: 2
-  UnloadSceneNum: 6
+  SceneName: 3
+  UnloadSceneNum: 7
 --- !u!328 &897440029
 VideoPlayer:
   m_ObjectHideFlags: 0

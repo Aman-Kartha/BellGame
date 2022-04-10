@@ -73,7 +73,7 @@ public class temperature : MonoBehaviour
         if (progress == 1f && ensureOne)
         {
             Debug.Log("one");
-            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(4, 2));
+            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(5, 3));
             ensureOne = false;
         }
         //Debug.Log(progress);

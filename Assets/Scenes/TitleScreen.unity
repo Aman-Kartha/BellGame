@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3544f5eee7293c3428ee47190a481d22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadScene: 5
-  unloadScene: 0
+  loadScene: 6
+  unloadScene: 1
 --- !u!114 &186692027
 MonoBehaviour:
   m_ObjectHideFlags: 0

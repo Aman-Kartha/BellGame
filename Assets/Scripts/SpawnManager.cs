@@ -37,7 +37,7 @@ public class SpawnManager : MonoBehaviour
     {
         if (gameDone && unloaded)
         {
-            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(6,1));
+            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(7,2));
             unloaded = false;
         }
         else

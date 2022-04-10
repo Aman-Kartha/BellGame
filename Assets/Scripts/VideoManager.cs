@@ -29,4 +29,8 @@ public class VideoManager : MonoBehaviour
     {
         StartCoroutine(this.GetComponent<combine>().loadlevelAsync(loadScene, unloadScene));
     }
+    public void nonAsyncNext()
+    {
+        SceneManager.LoadScene(7);
+    }
 }

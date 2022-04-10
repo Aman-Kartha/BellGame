@@ -71,7 +71,7 @@ public class HealthSystem : MonoBehaviour
             }
             if (health <= 0)
             {
-                StartCoroutine(this.GetComponent<combine>().loadlevelAsync(3,1));
+                StartCoroutine(this.GetComponent<combine>().loadlevelAsync(4,2));
             }
         }
     }
