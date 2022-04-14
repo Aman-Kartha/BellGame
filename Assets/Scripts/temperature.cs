@@ -15,6 +15,14 @@ public class temperature : MonoBehaviour
     [SerializeField] GameObject TARGETIMAGE;
     [SerializeField] float progressMultiplier;
 
+    [SerializeField] GameObject stream;
+ 
+    [SerializeField] Animator anim;
+    [SerializeField] Animator anim1;
+    [SerializeField] Animator CrucibleAnim;
+    [SerializeField] Animator FurnaceAnim;
+    [SerializeField] Animator moldAnim;
+    [SerializeField] Animator moldLeftAnim;
     [SerializeField] GameObject lava;
 
     [SerializeField] Light fire;
@@ -73,18 +81,31 @@ public class temperature : MonoBehaviour
         if (progress == 1f && ensureOne)
         {
             Debug.Log("one");
-            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(5, 3));
+           // StartCoroutine(this.GetComponent<combine>().loadlevelAsync(5, 3));
+
+            anim.SetTrigger("moveAway");
+            anim1.SetTrigger("moveAwayLeft");
+            CrucibleAnim.SetTrigger("moveCrucible");
+            FurnaceAnim.SetTrigger("moveFurnace");
+            moldAnim.SetTrigger("moveMold");
+            moldLeftAnim.SetTrigger("moveMold");
+
+           
+
+
             ensureOne = false;
         }
         //Debug.Log(progress);
         progressCheck();
 
-        fire.intensity = (temperaturePosition + 0.2f) * 50f;
+        fire.intensity = (temperaturePosition +0.0001f) * 50f;
         
         if (Input.GetKeyDown(KeyCode.Q) )
         {
 
             heat();
+            anim.SetTrigger("blow");
+            anim1.SetTrigger("blow");
 
         }
 
