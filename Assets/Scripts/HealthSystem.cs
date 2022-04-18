@@ -21,6 +21,8 @@ public class HealthSystem : MonoBehaviour
     [SerializeField]
     private Sprite halfBar;
     [SerializeField]
+    private ParticleSystem particleSystem;
+    [SerializeField]
     private float shakeLength;
     private float shakeDuration = 0f;
     private float shakeMagnitude = 0.7f;
@@ -53,6 +55,7 @@ public class HealthSystem : MonoBehaviour
     }
     public void removeHealth(float loss)
     {
+        particleSystem.Play();
         if (loss > 0.05)
         {
             startShake();
@@ -73,7 +76,13 @@ public class HealthSystem : MonoBehaviour
             {
                 StartCoroutine(this.GetComponent<combine>().loadlevelAsync(4,2));
             }
+            particleSystem.startColor = Color.red;
         }
+        else
+        {
+            particleSystem.startColor = Color.green;
+        }
+        particleSystem.Play();
     }
     private void startShake()
     {
