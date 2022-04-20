@@ -13,7 +13,15 @@ public class videoTransition : MonoBehaviour
     {
         VideoPlayer.loopPointReached += LoadScene;
     }
-    void LoadScene(VideoPlayer vp)
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W))
+        {
+            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(SceneName, UnloadSceneNum));
+        }
+    }
+    public void LoadScene(VideoPlayer vp)
     {
         StartCoroutine(this.GetComponent<combine>().loadlevelAsync(SceneName,UnloadSceneNum));
         //SceneManager.LoadScene(SceneName);

@@ -23,11 +23,14 @@ public class combine : MonoBehaviour
     {
         var progress = SceneManager.LoadSceneAsync(num, LoadSceneMode.Additive);
 
-        var progress2 = SceneManager.UnloadSceneAsync(unloadNum);
+     
 
-        while(!progress.isDone && !progress2.isDone ){
+        while(progress.isDone ){
             yield return null;
         }
+
+       
+        var progress2 = SceneManager.UnloadSceneAsync(unloadNum);
 
         Debug.Log("level Loaded");
 

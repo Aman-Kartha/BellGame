@@ -19,11 +19,18 @@ public class VideoManager : MonoBehaviour
     {
         VideoPlayer vp = this.GetComponent<VideoPlayer>();
 
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W))
+        {
+            nextScene();
+        }
+
+
         if(vp.time > 8.4f && vp.time <= 9)
         {
             vp.time = 4.3f;
             vp.Play();
         }
+
     }
     public void nextScene()
     {
@@ -33,4 +40,6 @@ public class VideoManager : MonoBehaviour
     {
         SceneManager.LoadScene(7);
     }
+
+
 }
