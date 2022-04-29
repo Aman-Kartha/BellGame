@@ -9,6 +9,9 @@ public class videoTransition : MonoBehaviour
     public VideoPlayer VideoPlayer; // Drag & Drop the GameObject holding the VideoPlayer component
     public int SceneName;
     public int UnloadSceneNum;
+
+    [SerializeField]
+    bool check;
     void Start()
     {
         VideoPlayer.loopPointReached += LoadScene;
@@ -16,8 +19,9 @@ public class videoTransition : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.W))
+        if ( Input.GetKeyDown(KeyCode.W))
         {
+            if(!check)
             StartCoroutine(this.GetComponent<combine>().loadlevelAsync(SceneName, UnloadSceneNum));
         }
     }
@@ -26,4 +30,6 @@ public class videoTransition : MonoBehaviour
         StartCoroutine(this.GetComponent<combine>().loadlevelAsync(SceneName,UnloadSceneNum));
         //SceneManager.LoadScene(SceneName);
     }
+
+    
 }

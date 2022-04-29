@@ -8,6 +8,14 @@ public class combine : MonoBehaviour
     [SerializeField]
     int sceneNum;
 
+    [SerializeField]
+    int SceneName;
+    [SerializeField]
+    int UnloadSceneNum;
+
+    [SerializeField]
+    bool check;
+
     void Start()
     {
         
@@ -16,10 +24,20 @@ public class combine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (check)
+                loadSceneWithout();
+        }
     }
 
-    public IEnumerator loadlevelAsync(int num,int unloadNum)
+    public void loadSceneWithout()
+    {
+        StartCoroutine(this.GetComponent<combine>().loadlevelAsync(SceneName, UnloadSceneNum));
+    }
+
+
+public IEnumerator loadlevelAsync(int num,int unloadNum)
     {
         var progress = SceneManager.LoadSceneAsync(num, LoadSceneMode.Additive);
 
