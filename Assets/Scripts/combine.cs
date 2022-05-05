@@ -43,7 +43,7 @@ public IEnumerator loadlevelAsync(int num,int unloadNum)
 
      
 
-        while(progress.isDone ){
+        while(!progress.isDone ){
             yield return null;
         }
 
