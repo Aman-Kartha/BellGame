@@ -84,6 +84,12 @@ public class HealthSystem : MonoBehaviour
         }
         particleSystem.Play();
     }
+
+    public float getHealth()
+    {
+        return health;
+    }
+
     private void startShake()
     {
         shakeDuration = shakeLength;

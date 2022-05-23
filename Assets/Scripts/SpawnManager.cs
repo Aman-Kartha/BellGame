@@ -37,8 +37,13 @@ public class SpawnManager : MonoBehaviour
     {
         if (gameDone && unloaded)
         {
-            StartCoroutine(this.GetComponent<combine>().loadlevelAsync(7,2));
-            unloaded = false;
+            if (this.GetComponent<HealthSystem>().getHealth() > 0)
+            {
+                StartCoroutine(this.GetComponent<combine>().loadlevelAsync(7, 2));
+                unloaded = false;
+            }
+            else
+                this.GetComponent<combine>().loadlevelAsync(4, 2);
         }
         else
         {
@@ -78,8 +83,15 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator nextScene()
     {
-        this.gameObject.GetComponent<ParticleSystem>().Play();
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(6);
+        if (this.GetComponent<HealthSystem>().getHealth() > 0)
+        {
+            this.gameObject.GetComponent<ParticleSystem>().Play();
+            yield return new WaitForSeconds(3);
+            SceneManager.LoadScene(6);
+        }
+        else
+        {
+            this.GetComponent<combine>().loadlevelAsync(4, 2);
+        }
     }
 }
